@@ -35,18 +35,15 @@ namespace LearningAuth.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
-            if(model.UserName == null)
+
+            if(model.UserName is null)
             {
                 model.UserName = model.Email;
             }
-
             if (ModelState.IsValid)
             {
-                var user = new AppUser { FirstName = model.FirstName, LastName = model.LastName, Email = model.Email, UserName=model.UserName };
-                if(model.UserName is null)
-                {
-                    model.UserName = model.Email;
-                }
+                var user = new AppUser { FirstName = model.FirstName, LastName = model.LastName, Email = model.Email, UserName = model.UserName };
+               
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

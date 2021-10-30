@@ -436,3 +436,4 @@ C:\Users\hp\Desktop\NewNew\LearningAuth\LearningAuth\bin\Debug\net5.0\runtimes\w
 C:\Users\hp\Desktop\NewNew\LearningAuth\LearningAuth\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\hp\Desktop\NewNew\LearningAuth\LearningAuth\obj\Debug\net5.0\Razor\Views\Auth\Register.cshtml.g.cs
 C:\Users\hp\Desktop\NewNew\LearningAuth\LearningAuth\obj\Debug\net5.0\Razor\Views\Auth\Login.cshtml.g.cs
+C:\Users\hp\Desktop\NewNew\LearningAuth\LearningAuth\obj\Debug\net5.0\Razor\Views\Shared\FirstPartial.cshtml.g.cs

@@ -8,7 +8,9 @@ namespace LearningAuth.Models
         public string Email { get; set; }
 
 
-        [Required]
+        [Required(ErrorMessage ="The password field cannot be empty")]
+        [DataType(DataType.Password)]
+        
         public string Password { get; set; }
 
 
