@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Data.Repositories
 {
-    class AuthRepository
+    public class AuthRepository
     {
+
     }
 }

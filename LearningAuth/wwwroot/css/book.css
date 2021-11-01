@@ -1,0 +1,27 @@
+﻿.catalog-flex {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-around !important;
+    padding: 1rem !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+.book-flex {
+    width: 3rem !important;
+    height: 4rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+.picture-div {
+    width: 100% !important;
+    height: 70% !important;
+}
+.book-image {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.book-auth, .book-title{
+    
+}

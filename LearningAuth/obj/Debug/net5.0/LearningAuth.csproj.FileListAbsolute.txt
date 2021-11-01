@@ -443,3 +443,4 @@ C:\Users\hp\Desktop\NewNew\LearningAuth\LearningAuth\bin\Debug\net5.0\Mailjet.Cl
 C:\Users\hp\Desktop\NewNew\LearningAuth\LearningAuth\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
 C:\Users\hp\Desktop\NewNew\LearningAuth\LearningAuth\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.dll
 C:\Users\hp\Desktop\NewNew\LearningAuth\LearningAuth\bin\Debug\net5.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\hp\Desktop\NewNew\LearningAuth\LearningAuth\obj\Debug\net5.0\Razor\Views\Book\Index.cshtml.g.cs

@@ -25,7 +25,7 @@ namespace LearningAuth.Services
         public async Task SendEmailAsync(string email, string subject, string htmlMessage)
         {
             _mailJetOptions = _configuration.GetSection("MailJet").Get<MailJetOptions>();
-            MailjetClient client = new MailjetClient(_mailJetOptions.ApiKey, _mailJetOptions.SecretKey);
+            MailjetClient client = new (_mailJetOptions.ApiKey, _mailJetOptions.SecretKey);
             {
                 Version = ApiVersion.V3_1;
             };

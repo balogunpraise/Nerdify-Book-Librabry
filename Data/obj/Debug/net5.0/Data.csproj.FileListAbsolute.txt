@@ -12,3 +12,4 @@ C:\Users\hp\Desktop\NewNew\LearningAuth\Data\obj\Debug\net5.0\Data.csproj.CoreCo
 C:\Users\hp\Desktop\NewNew\LearningAuth\Data\obj\Debug\net5.0\Data.dll
 C:\Users\hp\Desktop\NewNew\LearningAuth\Data\obj\Debug\net5.0\ref\Data.dll
 C:\Users\hp\Desktop\NewNew\LearningAuth\Data\obj\Debug\net5.0\Data.pdb
+C:\Users\hp\Desktop\NewNew\LearningAuth\Data\obj\Debug\net5.0\Data.csproj.CopyComplete

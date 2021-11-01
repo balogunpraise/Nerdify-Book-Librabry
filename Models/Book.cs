@@ -18,5 +18,6 @@ namespace Models
         public string ImageUrl { get; set; }
         public string ISBN { get; set; }
         public int Pages { get; set; }
+        public ICollection<Review> Reviews { get; set; }
     }
 }
