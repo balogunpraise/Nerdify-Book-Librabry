@@ -1,8 +1,10 @@
 using Data;
+using LearningAuth.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,8 +31,10 @@ namespace LearningAuth
             services.AddControllersWithViews();
             services.AddDbContext<DatabaseContext>(options => options
             .UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddTransient<IEmailSender, MailJetEmailSender>();
 
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<DatabaseContext>();
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<DatabaseContext>()
+            .AddDefaultTokenProviders();
         }
 
 

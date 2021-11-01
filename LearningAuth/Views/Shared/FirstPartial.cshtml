@@ -3,10 +3,9 @@
 @inject SignInManager<IdentityUser> _signinManager;
 @inject UserManager<IdentityUser> _userManager;
 
-
-<ul class="nav-bar" style="display: flex; justify-content:center; align-items: center;">
-    @if (_signinManager.IsSignedIn(User))
+@if (_signinManager.IsSignedIn(User))
     {
+    <ul class="nav-bar" style="display: flex; justify-content:center; align-items: center;">
         <li class="">
             <a class="">Hello @_userManager.GetUserName(User)</a>
         </li>
@@ -15,9 +14,10 @@
         <li class="">
             <a class="" asp-action="Logout" asp-controller="Auth">Logout</a>
         </li>
-    }
-    else
-    {
-        
-    }
-</ul>
+    </ul>
+ }
+ else
+ {
+
+ }
+       

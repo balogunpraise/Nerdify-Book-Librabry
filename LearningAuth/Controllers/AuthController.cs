@@ -1,5 +1,6 @@
 ﻿using LearningAuth.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using System.Threading.Tasks;
@@ -11,10 +12,13 @@ namespace LearningAuth.Controllers
 
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signinManager;
-        public AuthController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser>signInManager)
+        private readonly IEmailSender _emailSender;
+        public AuthController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser>signInManager
+         , IEmailSender emailSender)
         {
             _userManager = userManager;
             _signinManager = signInManager;
+            _emailSender = emailSender;
         }
         public IActionResult Index()
         {
@@ -23,8 +27,9 @@ namespace LearningAuth.Controllers
 
 
         [HttpGet]
-        public IActionResult Register()
+        public IActionResult Register(string redirecturl = null)
         {
+            ViewData["RedirectUrl"] = redirecturl;
             RegisterViewModel model = new();
             return View(model);
         }
@@ -33,10 +38,12 @@ namespace LearningAuth.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(RegisterViewModel model)
+        public async Task<IActionResult> Register(RegisterViewModel model, string redirecturl = null)
         {
+            ViewData["RedirectUrl"] = redirecturl;
+            redirecturl ??= Url.Content("~/");
 
-            if(model.UserName is null)
+            if (model.UserName is null)
             {
                 model.UserName = model.Email;
             }
@@ -48,7 +55,7 @@ namespace LearningAuth.Controllers
                 if (result.Succeeded)
                 {
                     await _signinManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Home");
+                    return LocalRedirect(redirecturl);
                 }
                 else
                 {
@@ -74,12 +81,13 @@ namespace LearningAuth.Controllers
         public async Task<IActionResult> Login(LoginViewModel model, string returnurl = null)
         {
             ViewData["ReturnUrl"] = returnurl;
+            returnurl ??= Url.Content("~/");
             if (ModelState.IsValid)
             {
                 var result = await _signinManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return LocalRedirect(returnurl);
                 }
                 else
                 {
@@ -101,8 +109,47 @@ namespace LearningAuth.Controllers
 
 
 
+       
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
 
 
-        
+
+
+        [HttpPost]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.FindByEmailAsync(model.Email);
+                if(user is null)
+                {
+                    ModelState.AddModelError(string.Empty, "The email is invalid");
+                    return RedirectToAction("ForgotPasswordConfimation", "Auth");
+                }
+                else
+                {
+                    var code = await _userManager.GeneratePasswordResetTokenAsync(user);
+                    var callBack = Url.Action("ResetPassword", "Auth", new { Id = user.Id, code = code },
+                    protocol: HttpContext.Request.Scheme);
+                    await _emailSender.SendEmailAsync(model.Email, "Password Reset",
+                        "Please reset your password by clicking this: <a href=\"" + callBack + "\">Link</a>");
+                    return RedirectToAction("ForgotPasswordConfirmation");
+                }
+            }
+            return View();
+            
+        }
+
+
+
+        [HttpGet]
+        public IActionResult ForgotPasswordConfirmation()
+        {
+            return View();
+        }
+
     }
 }

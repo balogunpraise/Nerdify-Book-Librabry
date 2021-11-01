@@ -6,13 +6,23 @@
 
 <head>
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+
 </head>
 
 
 
 
 <h1 class="text-primary offset-3" style="margin-top: .5rem">Register</h1>
-<form asp-controller="Auth" asp-action="Register" method="post" role="form" class="mt-1">
+<form asp-controller="Auth" asp-action="Register" method="post" role="form" asp-route-redirecturl="@ViewData["RedirectUrl"]" class="mt-1">
     <div class="text-danger offset-3" asp-validation-summary="All"></div>
 
 

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningAuth", "LearningAuth\LearningAuth.csproj", "{F6348F0A-7054-4FB8-A033-48F3B4F1ABA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearningAuth", "LearningAuth\LearningAuth.csproj", "{F6348F0A-7054-4FB8-A033-48F3B4F1ABA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{3E18E0DC-6209-4526-A0D0-371A66AB16D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{3E18E0DC-6209-4526-A0D0-371A66AB16D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{3D1BF8FB-C47D-4EF0-A782-F2BFD4E75FA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{3D1BF8FB-C47D-4EF0-A782-F2BFD4E75FA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
