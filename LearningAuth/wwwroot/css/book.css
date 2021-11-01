@@ -1,27 +1,113 @@
-﻿.catalog-flex {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: space-around !important;
-    padding: 1rem !important;
-    align-items: center !important;
-    width: 100% !important;
+﻿body {
+    overflow-x: hidden;
+     background: #F5F5F5;
+    font-family: 'Poppins', sans-serif;
+}
+
+.catalog-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1rem;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
 }
 
 .book-flex {
-    width: 3rem !important;
-    height: 4rem !important;
-    display: flex !important;
-    flex-direction: column !important;
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
 }
 .picture-div {
-    width: 100% !important;
-    height: 70% !important;
-}
-.book-image {
-    width: 100% !important;
-    height: 100% !important;
+    background-image: url(https://m.media-amazon.com/images/G/01/prime/primeinsider2/pageturners/trending/harry_potter._CB472533465_.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 10rem;
 }
 
-.book-auth, .book-title{
-    
+
+.write-up{
+    line-height: 1px;
+    padding: .5rem;
+}
+
+.book-author{
+    color: gray;
+}
+.book-title{
+    text-transform: uppercase;
+}
+
+#initials-div{
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid white;
+}
+
+
+.initial{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #263B5E;
+    cursor: pointer;
+}
+.logout{
+    color: white;
+}
+
+
+.auth-card {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: .5rem;
+    background: white;
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (min-width: 360px){
+
+    .catalog-flex {
+        gap: 1rem;
+    }
+
+
+    .book-flex {
+        width: 9rem;
+    }
+
+    .picture-div {
+        height: 7rem;
+    }
+
+
+    .write-up {
+        line-height: 1px;
+        padding: .5rem;
+    }
+
+    .book-author {
+        color: gray;
+        font-size: .5rem;
+    }
+
+    .book-title {
+        text-transform: uppercase;
+        font-size: .7rem;
+    }
+    .rating{
+        font-size: .6rem;
+    }
+
+    .partial-1 {
+        width: 80%
+    }
 }

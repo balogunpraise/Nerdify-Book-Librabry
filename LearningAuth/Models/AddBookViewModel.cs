@@ -1,25 +1,17 @@
-﻿using System;
+﻿using Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Models
+namespace LearningAuth.Models
 {
-    public class Book : BaseEntity
+    public class AddBookViewModel
     {
         public string Title { get; set; }
-        public string BooktypeId { get; set; }
         public string AuthorName { get; set; }
         public string Genre { get; set; }
-        public BookType BookType { get; set; }
         public string Description { get; set; }
-        public string AuthorId { get; set; }
-        public Author Author { get; set; }
         public int Year { get; set; }
         public string ImageUrl { get; set; }
         public string ISBN { get; set; }
         public int Pages { get; set; }
-        public ICollection<Review> Reviews { get; set; }
     }
 }

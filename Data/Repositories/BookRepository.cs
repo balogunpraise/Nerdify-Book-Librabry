@@ -83,6 +83,30 @@ namespace Data.Repositories
             }
         }
 
+
+
+        // UPDATE REQUEST
+
+
+        public async Task<Book> UpdateBook(string id, Book simulated)
+        {
+            var book = await _context.Books.Where(x => x.Id == id)
+                .Include(x => x.BookType)
+                .FirstOrDefaultAsync();
+            if(book is not null)
+            {
+                book.Title = simulated.Title;
+                book.Author = simulated.Author;
+                book.Pages = simulated.Pages;
+                book.ISBN = simulated.ISBN;
+                book.ImageUrl = simulated.ImageUrl;
+                book.Year = simulated.Year;
+                book.BookType.Genre = simulated.BookType.Genre;
+            }
+            await _context.SaveChangesAsync();
+            return book;
+        }
+
     }
 
 }

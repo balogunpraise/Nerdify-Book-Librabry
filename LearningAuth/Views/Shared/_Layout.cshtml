@@ -44,22 +44,22 @@
 <body>
 
     <!-- Sub Header -->
-    <div class="sub-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-sm-4">
-                    <div class="right-icons">
+    <div class="sub-header" style="width: 100%">
+        <div class="contain" style="width: 100%">
+            <div class="" style="width: 100%">
+                <div class="">
+                    <div class="right-icons" style="display:flex; width: 100%; justify-content: space-between">
                         <ul>
                             <li><a style="color:white; font-size: 1.5rem" href="#"><i class="fab fa-facebook"></i></a></li>
                             <li><a style="color:white; font-size: 1.5rem" href="#"><i class="fab fa-twitter"></i></a></li>
                             <li><a style="color:white; font-size: 1.5rem" href="#"><i class="fas fa-linkedin"></i></a></li>
 
                         </ul>
-                        <ul>
-                            <li><partial name="FirstPartial" /></li>
-                        </ul>
-                    </div>
 
+
+                        <partial name="FirstPartial" />
+                    </div>
+                    
                 </div>
 
             </div>
@@ -73,7 +73,7 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">
+                        <a asp-action="Index" asp-controller="Home" class="logo">
                             Nerdify
                         </a>
                         <!-- ***** Logo End ***** -->

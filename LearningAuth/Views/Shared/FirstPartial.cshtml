@@ -3,18 +3,19 @@
 @inject SignInManager<IdentityUser> _signinManager;
 @inject UserManager<IdentityUser> _userManager;
 
+    
+
 @if (_signinManager.IsSignedIn(User))
     {
-    <ul class="nav-bar" style="display: flex; justify-content:center; align-items: center;">
-        <li class="">
-            <a class="">Hello @_userManager.GetUserName(User)</a>
-        </li>
+<head>
+    <link href="~/css/book.css" rel="stylesheet" />
+</head>
+    <div class="partial-1" style="display: flex; justify-content:flex-end; align-items: center; width: 30%;
+             gap:1rem; margin-right: 1rem;">
+            <div id="initials-div"><h3><a class="initial"> @_userManager.GetUserName(User)</a></h3></div>
+            <a class="logout" asp-action="Logout" asp-controller="Auth">Logout</a>
 
-
-        <li class="">
-            <a class="" asp-action="Logout" asp-controller="Auth">Logout</a>
-        </li>
-    </ul>
+    </div>
  }
  else
  {

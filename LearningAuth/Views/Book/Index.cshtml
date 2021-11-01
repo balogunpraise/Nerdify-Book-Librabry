@@ -3,33 +3,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    @*<link href="~/css/book.css" type="stylesheet" />*@
+    <link href="~/css/book.css" rel="stylesheet" />
 </head>
-@*
-@{ 
+
+@*@{ 
     Layout = null;
-}
-*@
-<div class="grid-container">
-    <div class="catalog-flex">
-        @for(var i=1; i<16; i++)
+}*@
+<body>
+    <div class="grid-container">
+        <div class="catalog-flex">
+            @for (var i = 1; i < 21; i++)
             {
                 <div class="book-flex">
                     <div class="picture-div">
-                        <img class="book-image" src="https://m.media-amazon.com/images/G/01/prime/primeinsider2/pageturners/trending/harry_potter._CB472533465_.jpg" alt="book" width="200" height="200"/>
+                        @*<img class="book-image" src="https://m.media-amazon.com/images/G/01/prime/primeinsider2/pageturners/trending/harry_potter._CB472533465_.jpg" alt="book" />*@
                     </div>
                     <div class="write-up">
-                        <h5 class="book-author">Harry Potter</h5>
-                        <p class="book-title">J.K Rowling</p>
-                        <ul>
-                            @for (var j = 1; j < 6; j++)
-                            {
-                                <li><i class="fas fa-star"></i></li>
-                            }
+                        <h5 class="book-title">Harry Potter</h5>
+                        <p class="book-author">J.K Rowling</p>
 
-                        </ul>
+                        @for (var j = 1; j < 6; j++)
+                        {
+                            <i class="fas fa-star rating" style="color: #F6B01E; font-size: .8rem;"></i>
+                        }
+
+
                     </div>
-                </div> 
+                </div>
             }
+        </div>
     </div>
-</div>
+</body>

@@ -9,9 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-
+    <link href="~/css/book.css" rel="stylesheet" />
     <style>
-        *{
+        * {
             font-family: 'Poppins', sans-serif;
         }
     </style>
@@ -19,60 +19,64 @@
 </head>
 
 
+<body>
+    <div class="auth-card">
+        <h1 class="text-primary offset-3" style="margin-top: .5rem">Register</h1>
+        <form asp-controller="Auth" asp-action="Register" method="post" role="form" asp-route-redirecturl="@ViewData["RedirectUrl"]" class="mt-1">
+            <div class="text-danger offset-3" asp-validation-summary="All"></div>
 
 
-<h1 class="text-primary offset-3" style="margin-top: .5rem">Register</h1>
-<form asp-controller="Auth" asp-action="Register" method="post" role="form" asp-route-redirecturl="@ViewData["RedirectUrl"]" class="mt-1">
-    <div class="text-danger offset-3" asp-validation-summary="All"></div>
+            <div class="mt-1">
+                <label asp-for="FirstName" class="col-md-4 offset-3"></label>
+                <div class="col-md-6 offset-3">
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+            </div>
 
 
-    <div class="mt-3">
-        <label asp-for="FirstName" class="col-md-2 offset-3"></label>
-        <div class="col-md-6 offset-3">
-            <input asp-for="FirstName" class="form-control" />
-            <span asp-validation-for="FirstName" class="text-danger"></span>
-        </div>
+            <div class="mt-1">
+                <label asp-for="LastName" class="col-md-4  offset-3"></label>
+                <div class="col-md-6 offset-3">
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="mt-1">
+                <label asp-for="Email" class="col-md-4 offset-3"></label>
+                <div class="col-md-6 offset-3">
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="mt-1">
+                <label asp-for="Password" class="col-md-4  offset-3"></label>
+                <div class="col-md-6 offset-3">
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="mt-1">
+                <label asp-for="ConfirmPassword" class="col-md-4  offset-3"></label>
+                <div class="col-md-6 offset-3">
+                    <input asp-for="ConfirmPassword" class="form-control" type="password" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="mt-1">
+                <div class="col-md-4 offset-3">
+                    <button type="submit" class="btn btn-success">Register</button>
+                </div>
+            </div>
+
+        </form>
     </div>
+</body>
 
 
-    <div class="mt-3">
-        <label asp-for="LastName" class="col-md-2 offset-3"></label>
-        <div class="col-md-6 offset-3">
-            <input asp-for="LastName" class="form-control" />
-            <span asp-validation-for="LastName" class="text-danger"></span>
-        </div>
-    </div>
-
-    <div class="mt-3">
-        <label asp-for="Email" class="col-md-2 offset-3"></label>
-        <div class="col-md-6 offset-3">
-            <input asp-for="Email" class="form-control" />
-            <span asp-validation-for="Email" class="text-danger"></span>
-        </div>
-    </div>
-
-    <div class="mt-3">
-        <label asp-for="Password" class="col-md-2 offset-3"></label>
-        <div class="col-md-6 offset-3">
-            <input asp-for="Password" class="form-control" />
-            <span asp-validation-for="Password" class="text-danger"></span>
-        </div>
-    </div>
-
-    <div class="mt-3">
-        <label asp-for="ConfirmPassword" class="col-md-2 offset-3"></label>
-        <div class="col-md-6 offset-3">
-            <input asp-for="ConfirmPassword" class="form-control" />
-            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-        </div>
-    </div>
-    <div class="mt-3">
-        <div class="col-md-4 offset-3">
-            <button type="submit" class="btn btn-success">Register</button>
-        </div>
-    </div>
-
-</form>
 
 @section Scripts{
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}

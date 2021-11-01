@@ -50,15 +50,17 @@ namespace LearningAuth.Controllers
         {
             ViewData["RedirectUrl"] = redirecturl;
             redirecturl ??= Url.Content("~/");
-
-            if (model.UserName is null)
-            {
-                model.UserName = model.Email;
-            }
+            /*model.UserName = string.Empty;*/
+            
+           
+                
+            
+            
             if (ModelState.IsValid)
             {
                 var user = new AppUser { FirstName = model.FirstName, LastName = model.LastName, Email = model.Email, UserName = model.UserName };
-               
+
+                model.UserName = $"{model.FirstName[0]}{model.LastName[0]}";
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
